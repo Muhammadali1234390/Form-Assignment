@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #9370DB;
+    color: white;
+}
+
+.container {
+    background-color: #4B0082;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="tel"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+.dob input {
+    width: 30%;
+    margin-right: 5px;
+}
+
+.gender, .hobbies, .courses {
+    margin-top: 10px;
+}
+
+.gender input, .hobbies input, .courses input {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #6A5ACD;
+}
+
+td {
+    background-color: #9370DB;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    margin: 10px 1%;
+    background-color: #6A5ACD;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #483D8B;
+}
+    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Application Form</title>
+</head>
+<body>
+    <form>
+        <div class="container">
+            <h2>Application Form</h2>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" maxlength="30" required>
+            
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" maxlength="30" required>
+            
+            <label for="dob">Date of Birth</label>
+            <div class="dob">
+                <input type="number" id="day" name="day" placeholder="Day" min="1" max="31" required>
+                <input type="number" id="month" name="month" placeholder="Month" min="1" max="12" required>
+                <input type="number" id="year" name="year" placeholder="Year" maxlength="2024" required="required">
+            </div>
+            
+            <label for="email">Email ID</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+            
+            <label for="gender">Gender</label>
+            <div class="gender">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+            
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+            
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" maxlength="30" required>
+            
+            <label for="pincode">Pin Code</label>
+            <input type="text" id="pincode" name="pincode" pattern="[0-9]{6}" required>
+            
+            <label for="state">State</label>
+            <input type="text" id="state" name="state" maxlength="30" required>
+            
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" value="India" readonly>
+            
+            <label for="hobbies">Hobbies</label>
+            <div class="hobbies">
+                <input type="checkbox" id="drawing" name="hobbies" value="drawing">
+                <label for="drawing">Drawing</label>
+                <input type="checkbox" id="singing" name="hobbies" value="singing">
+                <label for="singing">Singing</label>
+                <input type="checkbox" id="dancing" name="hobbies" value="dancing">
+                <label for="dancing">Dancing</label>
+                <input type="checkbox" id="sketching" name="hobbies" value="sketching">
+                <label for="sketching">Sketching</label>
+                <input type="checkbox" id="others" name="hobbies" value="others">
+                <label for="others">Others</label>
+                <input type="text" id="otherHobby" name="otherHobby">
+            </div>
+            
+            <label for="qualification">Qualification</label>
+            <table>
+                <tr>
+                    <th>Sl.No.</th>
+                    <th>Examination</th>
+                    <th>Board</th>
+                    <th>Percentage</th>
+                    <th>Year of Passing</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Class X</td>
+                    <td><input type="text" name="board1" maxlength="10"></td>
+                    <td><input type="number" name="percentage1" step="0.01"></td>
+                    <td><input type="number" name="year1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Class XII</td>
+                    <td><input type="text" name="board2" maxlength="10"></td>
+                    <td><input type="number" name="percentage2" step="0.01"></td>
+                    <td><input type="number" name="year2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Graduation</td>
+                    <td><input type="text" name="board3" maxlength="10"></td>
+                    <td><input type="number" name="percentage3" step="0.01"></td>
+                    <td><input type="number" name="year3"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Masters</td>
+                    <td><input type="text" name="board4" maxlength="10"></td>
+                    <td><input type="number" name="percentage4" step="0.01"></td>
+                    <td><input type="number" name="year4"></td>
+                </tr>
+            </table>
+            
+            <label for="courses">Courses Applied For</label>
+            <div class="courses">
+                <input type="checkbox" id="bca" name="courses" value="bca">
+                <label for="bca">BCA</label>
+                <input type="checkbox" id="bcom" name="courses" value="bcom">
+                <label for="bcom">B.Com</label>
+                <input type="checkbox" id="bsc" name="courses" value="bsc">
+                <label for="bsc">B.Sc</label>
+                <input type="checkbox" id="ba" name="courses" value="ba">
+                <label for="ba">B.A</label>
+            </div>
+            
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
+</body>
+</html>
